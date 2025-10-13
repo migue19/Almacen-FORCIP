@@ -6,6 +6,6 @@
 //
 struct Constants {
     struct Api {
-        static let baseUrl = "https://api.forcip.com.mx"
+        static let baseUrl = "http://192.168.100.25:8080/rutas"
     }
 }

@@ -254,25 +254,27 @@ class HomeView: UIViewController {
         // Vibración de feedback
         let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
         impactFeedback.impactOccurred()
+        self.stopScanning()
+        presenter?.processQRCode(code)
         
         // Mostrar el resultado
-        let alert = UIAlertController(
-            title: "Código QR Escaneado",
-            message: "Contenido: \(code)",
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "Escanear Otro", style: .default) { [weak self] _ in
-            DispatchQueue.global(qos: .background).async {
-                self?.captureSession.startRunning()
-            }
-        })
-        
-        alert.addAction(UIAlertAction(title: "Cerrar", style: .cancel) { [weak self] _ in
-            self?.stopScanning()
-        })
-        
-        present(alert, animated: true)
+//        let alert = UIAlertController(
+//            title: "Código QR Escaneado",
+//            message: "Contenido: \(code)",
+//            preferredStyle: .alert
+//        )
+//        
+//        alert.addAction(UIAlertAction(title: "Escanear Otro", style: .default) { [weak self] _ in
+//            DispatchQueue.global(qos: .background).async {
+//                self?.captureSession.startRunning()
+//            }
+//        })
+//        
+//        alert.addAction(UIAlertAction(title: "Cerrar", style: .cancel) { [weak self] _ in
+//            self?.stopScanning()
+//        })
+//        
+//        present(alert, animated: true)
         
         // Aquí puedes agregar tu lógica personalizada para manejar el código escaneado
         // Por ejemplo: presenter?.handleScannedQRCode(code)
@@ -298,6 +300,9 @@ extension HomeView: HomeViewProtocol {
     }
     
     func showError(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     func showLoading() {

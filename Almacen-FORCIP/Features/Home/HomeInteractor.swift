@@ -21,7 +21,8 @@ class HomeInteractor: HomeInteractorInputProtocol {
     
     func sendQRCode(_ qrCode: String) {
         let timestamp = ISO8601DateFormatter().string(from: Date())
-        let request = QRCodeRequest(qrCode: qrCode, timestamp: timestamp, userId: nil)
+        let requestBody = QRCodeRequestBody(lote: "48", observaciones: "ty")
+        let request = QRCodeRequest.init(code: qrCode, tipo: "algo", fuente: "iOS", datos: requestBody)
         remoteDatamanager?.postQRCode(request)
     }
 }

@@ -14,6 +14,7 @@ enum NetworkError: Error {
     case decodingError
     case networkError(Error)
     case invalidResponse
+    case serverError(message: String, statusCode: Int)
 }
 
 // MARK: - HTTP Methods
@@ -55,33 +56,52 @@ class NetworkService: NetworkServiceProtocol {
             completion(.failure(.invalidURL))
             return
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+
         if let body = body {
             request.httpBody = body
         }
-        
+
         session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(.networkError(error)))
                     return
                 }
-                
-                guard let httpResponse = response as? HTTPURLResponse,
-                      200...299 ~= httpResponse.statusCode else {
+
+                if let json = try? JSONSerialization.jsonObject(with: data ?? Data()) {
+                    print("Response JSON: \(json)")
+                }
+
+                // Verificar respuesta HTTP y manejar errores del servidor (p.ej. 400)
+                if let httpResponse = response as? HTTPURLResponse {
+                    guard 200...299 ~= httpResponse.statusCode else {
+                        // intentar extraer mensaje de error desde el body
+                        var serverMessage = "Respuesta inválida del servidor"
+                        if let data = data {
+                            // Primero intentar decodificar como { "message": "...", "status": "error" }
+                            if let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let msg = dict["message"] as? String {
+                                serverMessage = msg
+                            } else if let decoded = try? JSONDecoder().decode([String: String].self, from: data), let msg = decoded["message"] {
+                                serverMessage = msg
+                            }
+                        }
+                        completion(.failure(.serverError(message: serverMessage, statusCode: httpResponse.statusCode)))
+                        return
+                    }
+                } else {
                     completion(.failure(.invalidResponse))
                     return
                 }
-                
+
                 guard let data = data else {
                     completion(.failure(.noData))
                     return
                 }
-                
+
                 do {
                     let decodedResponse = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(decodedResponse))

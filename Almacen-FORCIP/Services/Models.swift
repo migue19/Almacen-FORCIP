@@ -9,15 +9,19 @@ import Foundation
 
 // MARK: - QR Code Models
 struct QRCodeRequest: Codable {
-    let qrCode: String
-    let timestamp: String
-    let userId: Int?
-    
+    let code: String
+    let tipo: String
+    let fuente: String
+    let datos: QRCodeRequestBody
+
     enum CodingKeys: String, CodingKey {
-        case qrCode = "qr_code"
-        case timestamp
-        case userId = "user_id"
+        case code = "codigo"
+        case tipo, fuente, datos
     }
+}
+struct QRCodeRequestBody: Codable {
+    let lote: String
+    let observaciones: String
 }
 
 struct QRCodeResponse: Codable {

@@ -28,6 +28,7 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
             case .success(let response):
                 self?.remoteRequestHandler?.onProductsReceived(response.products)
             case .failure(let error):
+                print(error)
                 let errorMessage = self?.getErrorMessage(from: error) ?? "Error desconocido"
                 self?.remoteRequestHandler?.onError(errorMessage)
             }
@@ -38,7 +39,7 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
         do {
             let jsonData = try JSONEncoder().encode(request)
             networkService.request(
-                endpoint: "/api/qr-scan",
+                endpoint: "/recibe_qr.php",
                 method: .POST,
                 body: jsonData,
                 responseType: QRCodeResponse.self
@@ -68,6 +69,13 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
             return "Error de red: \(error.localizedDescription)"
         case .invalidResponse:
             return "Respuesta inválida del servidor"
+        case .serverError(let message, let statusCode):
+            // Si el servidor devolvió un mensaje específico, devolverlo tal cual.
+            // En particular maneja respuestas 400 como: "El parámetro \"codigo\" es requerido"
+            if !message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                return message
+            }
+            return "Error del servidor (\(statusCode))"
         }
     }
 }
