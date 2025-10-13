@@ -3,7 +3,7 @@
 //  Almacen-FORCIP
 //
 //  Created by Miguel Mexicano Herrera on 13/10/25.
-//  
+//
 //
 
 import Foundation
@@ -18,11 +18,30 @@ class HomePresenter  {
 }
 
 extension HomePresenter: HomePresenterProtocol {
-    // TODO: implement presenter methods
+    
     func viewDidLoad() {
+        loadProducts()
+    }
+    
+    func loadProducts() {
+        view?.showLoading()
+        interactor?.fetchProducts()
+    }
+    
+    func refreshProducts() {
+        loadProducts()
     }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    
+    func didLoadProducts(_ products: [Product]) {
+        view?.hideLoading()
+        view?.showProducts(products)
+    }
+    
+    func didFailWithError(_ error: String) {
+        view?.hideLoading()
+        view?.showError(error)
+    }
 }
