@@ -31,6 +31,11 @@ extension HomePresenter: HomePresenterProtocol {
     func refreshProducts() {
         loadProducts()
     }
+    
+    func processQRCode(_ qrCode: String) {
+        view?.showLoading()
+        interactor?.sendQRCode(qrCode)
+    }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
@@ -41,6 +46,16 @@ extension HomePresenter: HomeInteractorOutputProtocol {
     }
     
     func didFailWithError(_ error: String) {
+        view?.hideLoading()
+        view?.showError(error)
+    }
+    
+    func didProcessQRCode(_ response: QRCodeResponse) {
+        view?.hideLoading()
+        view?.showQRCodeResult(response)
+    }
+    
+    func didFailProcessingQRCode(_ error: String) {
         view?.hideLoading()
         view?.showError(error)
     }

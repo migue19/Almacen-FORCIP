@@ -7,6 +7,40 @@
 
 import Foundation
 
+// MARK: - QR Code Models
+struct QRCodeRequest: Codable {
+    let qrCode: String
+    let timestamp: String
+    let userId: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case qrCode = "qr_code"
+        case timestamp
+        case userId = "user_id"
+    }
+}
+
+struct QRCodeResponse: Codable {
+    let success: Bool
+    let message: String
+    let data: QRCodeData?
+}
+
+struct QRCodeData: Codable {
+    let productId: Int?
+    let productName: String?
+    let productSku: String?
+    let action: String? // "entrada", "salida", "consulta"
+    let quantity: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case productId = "product_id"
+        case productName = "product_name"
+        case productSku = "product_sku"
+        case action, quantity
+    }
+}
+
 // MARK: - Product Model
 struct Product: Codable {
     let id: Int

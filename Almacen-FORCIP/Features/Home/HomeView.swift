@@ -294,5 +294,18 @@ extension HomeView: AVCaptureMetadataOutputObjectsDelegate {
 }
 
 extension HomeView: HomeViewProtocol {
-    // TODO: implement view output methods
+    func showProducts(_ products: [Product]) {
+    }
+    
+    func showError(_ message: String) {
+    }
+    
+    func showLoading() {
+    }
+    
+    func hideLoading() {
+    }
+    
+    func showQRCodeResult(_ response: QRCodeResponse) {
+    }
 }

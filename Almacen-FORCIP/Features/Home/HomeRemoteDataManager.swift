@@ -9,14 +9,13 @@
 import Foundation
 
 class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
-    
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol?
     private let networkService: NetworkServiceProtocol
     
     init(networkService: NetworkServiceProtocol = NetworkService.shared) {
         self.networkService = networkService
     }
-    
+
     // MARK: - HomeRemoteDataManagerInputProtocol
     func getProducts() {
         networkService.request(
@@ -35,6 +34,27 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
         }
     }
     
+    func postQRCode(_ request: QRCodeRequest) {
+        do {
+            let jsonData = try JSONEncoder().encode(request)
+            networkService.request(
+                endpoint: "/api/qr-scan",
+                method: .POST,
+                body: jsonData,
+                responseType: QRCodeResponse.self
+            ) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.remoteRequestHandler?.onQRCodeProcessed(response)
+                case .failure(let error):
+                    let errorMessage = self?.getErrorMessage(from: error) ?? "Error desconocido"
+                    self?.remoteRequestHandler?.onQRCodeError(errorMessage)
+                }
+            }
+        } catch {
+            remoteRequestHandler?.onQRCodeError("Error al codificar la solicitud")
+        }
+    }
     // MARK: - Private Methods
     private func getErrorMessage(from error: NetworkError) -> String {
         switch error {
