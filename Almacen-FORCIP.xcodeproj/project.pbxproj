@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		F239B9F82E9D71B9007286A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F239B9D62E9D71B8007286A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F239B9DD2E9D71B8007286A8;
+			remoteInfo = "Almacen-FORCIP";
+		};
+		F239BA022E9D71B9007286A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F239B9D62E9D71B8007286A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F239B9DD2E9D71B8007286A8;
+			remoteInfo = "Almacen-FORCIP";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F239B9DE2E9D71B8007286A8 /* Almacen-FORCIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Almacen-FORCIP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F239B9F72E9D71B9007286A8 /* Almacen-FORCIPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Almacen-FORCIPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F239BA012E9D71B9007286A8 /* Almacen-FORCIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Almacen-FORCIPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F239BA092E9D71B9007286A8 /* Exceptions for "Almacen-FORCIP" folder in "Almacen-FORCIP" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F239B9DD2E9D71B8007286A8 /* Almacen-FORCIP */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F239B9E02E9D71B8007286A8 /* Almacen-FORCIP */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F239BA092E9D71B9007286A8 /* Exceptions for "Almacen-FORCIP" folder in "Almacen-FORCIP" target */,
+			);
+			path = "Almacen-FORCIP";
+			sourceTree = "<group>";
+		};
+		F239B9FA2E9D71B9007286A8 /* Almacen-FORCIPTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Almacen-FORCIPTests";
+			sourceTree = "<group>";
+		};
+		F239BA042E9D71B9007286A8 /* Almacen-FORCIPUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Almacen-FORCIPUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F239B9DB2E9D71B8007286A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9F42E9D71B9007286A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9FE2E9D71B9007286A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F239B9D52E9D71B8007286A8 = {
+			isa = PBXGroup;
+			children = (
+				F239B9E02E9D71B8007286A8 /* Almacen-FORCIP */,
+				F239B9FA2E9D71B9007286A8 /* Almacen-FORCIPTests */,
+				F239BA042E9D71B9007286A8 /* Almacen-FORCIPUITests */,
+				F239B9DF2E9D71B8007286A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F239B9DF2E9D71B8007286A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F239B9DE2E9D71B8007286A8 /* Almacen-FORCIP.app */,
+				F239B9F72E9D71B9007286A8 /* Almacen-FORCIPTests.xctest */,
+				F239BA012E9D71B9007286A8 /* Almacen-FORCIPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F239B9DD2E9D71B8007286A8 /* Almacen-FORCIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F239BA0A2E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIP" */;
+			buildPhases = (
+				F239B9DA2E9D71B8007286A8 /* Sources */,
+				F239B9DB2E9D71B8007286A8 /* Frameworks */,
+				F239B9DC2E9D71B8007286A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F239B9E02E9D71B8007286A8 /* Almacen-FORCIP */,
+			);
+			name = "Almacen-FORCIP";
+			packageProductDependencies = (
+			);
+			productName = "Almacen-FORCIP";
+			productReference = F239B9DE2E9D71B8007286A8 /* Almacen-FORCIP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F239B9F62E9D71B9007286A8 /* Almacen-FORCIPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F239BA0F2E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIPTests" */;
+			buildPhases = (
+				F239B9F32E9D71B9007286A8 /* Sources */,
+				F239B9F42E9D71B9007286A8 /* Frameworks */,
+				F239B9F52E9D71B9007286A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F239B9F92E9D71B9007286A8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F239B9FA2E9D71B9007286A8 /* Almacen-FORCIPTests */,
+			);
+			name = "Almacen-FORCIPTests";
+			packageProductDependencies = (
+			);
+			productName = "Almacen-FORCIPTests";
+			productReference = F239B9F72E9D71B9007286A8 /* Almacen-FORCIPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F239BA002E9D71B9007286A8 /* Almacen-FORCIPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F239BA122E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIPUITests" */;
+			buildPhases = (
+				F239B9FD2E9D71B9007286A8 /* Sources */,
+				F239B9FE2E9D71B9007286A8 /* Frameworks */,
+				F239B9FF2E9D71B9007286A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F239BA032E9D71B9007286A8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F239BA042E9D71B9007286A8 /* Almacen-FORCIPUITests */,
+			);
+			name = "Almacen-FORCIPUITests";
+			packageProductDependencies = (
+			);
+			productName = "Almacen-FORCIPUITests";
+			productReference = F239BA012E9D71B9007286A8 /* Almacen-FORCIPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F239B9D62E9D71B8007286A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					F239B9DD2E9D71B8007286A8 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					F239B9F62E9D71B9007286A8 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = F239B9DD2E9D71B8007286A8;
+					};
+					F239BA002E9D71B9007286A8 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = F239B9DD2E9D71B8007286A8;
+					};
+				};
+			};
+			buildConfigurationList = F239B9D92E9D71B8007286A8 /* Build configuration list for PBXProject "Almacen-FORCIP" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F239B9D52E9D71B8007286A8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F239B9DF2E9D71B8007286A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F239B9DD2E9D71B8007286A8 /* Almacen-FORCIP */,
+				F239B9F62E9D71B9007286A8 /* Almacen-FORCIPTests */,
+				F239BA002E9D71B9007286A8 /* Almacen-FORCIPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F239B9DC2E9D71B8007286A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9F52E9D71B9007286A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9FF2E9D71B9007286A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F239B9DA2E9D71B8007286A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9F32E9D71B9007286A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F239B9FD2E9D71B9007286A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F239B9F92E9D71B9007286A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F239B9DD2E9D71B8007286A8 /* Almacen-FORCIP */;
+			targetProxy = F239B9F82E9D71B9007286A8 /* PBXContainerItemProxy */;
+		};
+		F239BA032E9D71B9007286A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F239B9DD2E9D71B8007286A8 /* Almacen-FORCIP */;
+			targetProxy = F239BA022E9D71B9007286A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F239BA0B2E9D71B9007286A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Almacen-FORCIP/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F239BA0C2E9D71B9007286A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Almacen-FORCIP/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F239BA0D2E9D71B9007286A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F239BA0E2E9D71B9007286A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F239BA102E9D71B9007286A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Almacen-FORCIP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Almacen-FORCIP";
+			};
+			name = Debug;
+		};
+		F239BA112E9D71B9007286A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Almacen-FORCIP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Almacen-FORCIP";
+			};
+			name = Release;
+		};
+		F239BA132E9D71B9007286A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIPUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Almacen-FORCIP";
+			};
+			name = Debug;
+		};
+		F239BA142E9D71B9007286A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.com.nut.Almacen-FORCIPUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Almacen-FORCIP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F239B9D92E9D71B8007286A8 /* Build configuration list for PBXProject "Almacen-FORCIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F239BA0D2E9D71B9007286A8 /* Debug */,
+				F239BA0E2E9D71B9007286A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F239BA0A2E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F239BA0B2E9D71B9007286A8 /* Debug */,
+				F239BA0C2E9D71B9007286A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F239BA0F2E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F239BA102E9D71B9007286A8 /* Debug */,
+				F239BA112E9D71B9007286A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F239BA122E9D71B9007286A8 /* Build configuration list for PBXNativeTarget "Almacen-FORCIPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F239BA132E9D71B9007286A8 /* Debug */,
+				F239BA142E9D71B9007286A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F239B9D62E9D71B8007286A8 /* Project object */;
+}
