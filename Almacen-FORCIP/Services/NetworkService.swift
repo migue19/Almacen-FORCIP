@@ -56,28 +56,29 @@ class NetworkService: NetworkServiceProtocol {
             completion(.failure(.invalidURL))
             return
         }
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         if let body = body {
             request.httpBody = body
         }
-
+        
         session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(.networkError(error)))
                     return
                 }
-
+                
                 if let json = try? JSONSerialization.jsonObject(with: data ?? Data()) {
                     print("Response JSON: \(json)")
                 }
-
+                
                 // Verificar respuesta HTTP y manejar errores del servidor (p.ej. 400)
                 if let httpResponse = response as? HTTPURLResponse {
+                    print("HTTP Status Code: \(httpResponse.statusCode)")
                     guard 200...299 ~= httpResponse.statusCode else {
                         // intentar extraer mensaje de error desde el body
                         var serverMessage = "Respuesta inválida del servidor"
@@ -92,21 +93,21 @@ class NetworkService: NetworkServiceProtocol {
                         completion(.failure(.serverError(message: serverMessage, statusCode: httpResponse.statusCode)))
                         return
                     }
+                    guard let data = data else {
+                        completion(.failure(.noData))
+                        return
+                    }
+                    
+                    do {
+                        let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                        completion(.success(decodedResponse))
+                    } catch {
+                        print("Decoding error: \(error)")
+                        completion(.failure(.decodingError))
+                    }
                 } else {
                     completion(.failure(.invalidResponse))
                     return
-                }
-
-                guard let data = data else {
-                    completion(.failure(.noData))
-                    return
-                }
-
-                do {
-                    let decodedResponse = try JSONDecoder().decode(T.self, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    completion(.failure(.decodingError))
                 }
             }
         }.resume()

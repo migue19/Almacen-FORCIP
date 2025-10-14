@@ -25,24 +25,9 @@ struct QRCodeRequestBody: Codable {
 }
 
 struct QRCodeResponse: Codable {
-    let success: Bool
+    let status: String
     let message: String
-    let data: QRCodeData?
-}
-
-struct QRCodeData: Codable {
-    let productId: Int?
-    let productName: String?
-    let productSku: String?
-    let action: String? // "entrada", "salida", "consulta"
-    let quantity: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case productId = "product_id"
-        case productName = "product_name"
-        case productSku = "product_sku"
-        case action, quantity
-    }
+    let codigo: String
 }
 
 // MARK: - Product Model

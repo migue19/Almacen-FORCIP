@@ -312,5 +312,8 @@ extension HomeView: HomeViewProtocol {
     }
     
     func showQRCodeResult(_ response: QRCodeResponse) {
+        let alert = UIAlertController(title: "Resultado del QR", message: "Codigo: \(response.codigo)\nEstado: \(response.status)\nMensaje: \(response.message)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }
