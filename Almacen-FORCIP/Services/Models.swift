@@ -7,98 +7,80 @@
 
 import Foundation
 
-// MARK: - QR Code Models
-struct QRCodeRequest: Codable {
-    let code: String
-    let tipo: String
-    let fuente: String
-    let datos: QRCodeRequestBody
-
-    enum CodingKeys: String, CodingKey {
-        case code = "codigo"
-        case tipo, fuente, datos
-    }
-}
-struct QRCodeRequestBody: Codable {
-    let lote: String
-    let observaciones: String
-}
-
 struct QRCodeResponse: Codable {
     let status: String
     let message: String
-    let codigo: String
+    let idOrdenCompra: Int
 }
 
-// MARK: - Product Model
-struct Product: Codable {
-    let id: Int
-    let name: String
-    let description: String
-    let price: Double
-    let stock: Int
-    let category: String
-    let imageUrl: String?
-    let sku: String
-    let createdAt: String
-    let updatedAt: String
-    
+// MARK: - Orden de Compra Model
+struct OrdenCompra: Codable {
+    let idOrdenCompra: Int
+    let insumo: String
+    let proveedor: String
+    let fechaHora: String
+    let pesoKg: Double?
+    let pesoTarima: Double?
+
     enum CodingKeys: String, CodingKey {
-        case id, name, description, price, stock, category, sku
-        case imageUrl = "image_url"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
+        case idOrdenCompra = "idOrdenCompra"
+        case insumo, proveedor
+        case fechaHora = "fecha_hora"
+        case pesoKg = "peso_kg"
+        case pesoTarima = "peso_tarima"
     }
-}
 
-// MARK: - Products Response
-struct ProductsResponse: Codable {
-    let products: [Product]
-    let totalCount: Int
-    let page: Int
-    let limit: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case products
-        case totalCount = "total_count"
-        case page, limit
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+
+        // idOrdenCompra puede venir como Int o String
+        if let intVal = try? c.decode(Int.self, forKey: .idOrdenCompra) {
+            idOrdenCompra = intVal
+        } else if let strVal = try? c.decode(String.self, forKey: .idOrdenCompra), let intVal = Int(strVal) {
+            idOrdenCompra = intVal
+        } else {
+            idOrdenCompra = 0
+        }
+
+        insumo = (try? c.decode(String.self, forKey: .insumo)) ?? ""
+        proveedor = (try? c.decode(String.self, forKey: .proveedor)) ?? ""
+        fechaHora = (try? c.decode(String.self, forKey: .fechaHora)) ?? ""
+
+        pesoKg = OrdenCompra.decodeDouble(from: c, key: .pesoKg)
+        pesoTarima = OrdenCompra.decodeDouble(from: c, key: .pesoTarima)
     }
-}
 
-// MARK: - Category Model
-struct Category: Codable {
-    let id: Int
-    let name: String
-    let description: String?
-    let productCount: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, description
-        case productCount = "product_count"
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(String(idOrdenCompra), forKey: .idOrdenCompra)
+        try c.encode(insumo, forKey: .insumo)
+        try c.encode(proveedor, forKey: .proveedor)
+        try c.encode(fechaHora, forKey: .fechaHora)
+
+        if let p = pesoKg {
+            try c.encode(String(format: "%.2f", p), forKey: .pesoKg)
+        } else {
+            try c.encode("", forKey: .pesoKg)
+        }
+
+        if let p = pesoTarima {
+            // usa formato sin decimales innecesarios
+            try c.encode(String(format: "%g", p), forKey: .pesoTarima)
+        } else {
+            try c.encode("", forKey: .pesoTarima)
+        }
     }
-}
 
-// MARK: - Inventory Movement
-struct InventoryMovement: Codable {
-    let id: Int
-    let productId: Int
-    let type: MovementType
-    let quantity: Int
-    let reason: String
-    let userId: Int
-    let createdAt: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case productId = "product_id"
-        case type, quantity, reason
-        case userId = "user_id"
-        case createdAt = "created_at"
+    private static func decodeDouble(from container: KeyedDecodingContainer<CodingKeys>, key: CodingKeys) -> Double? {
+        if let d = try? container.decode(Double.self, forKey: key) {
+            return d
+        }
+        if let str = try? container.decode(String.self, forKey: key) {
+            let trimmed = str.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed.isEmpty { return nil }
+            // reemplaza coma por punto por si viene con separador decimal local
+            return Double(trimmed.replacingOccurrences(of: ",", with: "."))
+        }
+        return nil
     }
-}
-
-enum MovementType: String, Codable {
-    case entrada = "entrada"
-    case salida = "salida"
-    case ajuste = "ajuste"
 }

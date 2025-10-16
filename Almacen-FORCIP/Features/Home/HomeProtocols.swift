@@ -12,11 +12,11 @@ import UIKit
 protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol? { get set }
     
-    func showProducts(_ products: [Product])
     func showError(_ message: String)
     func showLoading()
     func hideLoading()
     func showQRCodeResult(_ response: QRCodeResponse)
+    func showDecodedOrdenCompra(_ orden: OrdenCompra)
 }
 // PRESENTER -> ROUTER
 protocol HomeRouterProtocol: AnyObject {
@@ -29,25 +29,23 @@ protocol HomePresenterProtocol: AnyObject {
     var interactor: HomeInteractorInputProtocol? { get set }
     var router: HomeRouterProtocol? { get set }
     
-    func viewDidLoad()
-    func loadProducts()
-    func refreshProducts()
-    func processQRCode(_ qrCode: String)
+    func decodeQRCode(_ qrCode: String)
 }
 // INTERACTOR -> PRESENTER
 protocol HomeInteractorOutputProtocol: AnyObject {
-    func didLoadProducts(_ products: [Product])
     func didFailWithError(_ error: String)
     func didProcessQRCode(_ response: QRCodeResponse)
     func didFailProcessingQRCode(_ error: String)
+    func didDecodeOrdenCompra(_ orden: OrdenCompra)
+    func didFailDecodingQRCode(_ error: String)
 }
 // PRESENTER -> INTERACTOR
 protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
     
-    func fetchProducts()
-    func sendQRCode(_ qrCode: String)
+    func decodeQRCode(_ qrCode: String)
+    func sendOrdenCompra(_ orden: OrdenCompra)
 }
 // INTERACTOR -> DATAMANAGER
 protocol HomeDataManagerInputProtocol: AnyObject {
@@ -56,12 +54,10 @@ protocol HomeDataManagerInputProtocol: AnyObject {
 protocol HomeRemoteDataManagerInputProtocol: AnyObject {
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
     
-    func getProducts()
-    func postQRCode(_ request: QRCodeRequest)
+    func postQRCode(_ request: OrdenCompra)
 }
 // REMOTEDATAMANAGER -> INTERACTOR
 protocol HomeRemoteDataManagerOutputProtocol: AnyObject {
-    func onProductsReceived(_ products: [Product])
     func onError(_ error: String)
     func onQRCodeProcessed(_ response: QRCodeResponse)
     func onQRCodeError(_ error: String)

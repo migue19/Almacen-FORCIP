@@ -250,34 +250,12 @@ class HomeView: UIViewController {
     private func handleScannedCode(_ code: String) {
         // Detener el escaneo temporalmente para evitar múltiples lecturas
         captureSession.stopRunning()
-        
+        print("Código Escaneado: \(code)")
         // Vibración de feedback
         let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
         impactFeedback.impactOccurred()
         self.stopScanning()
-        presenter?.processQRCode(code)
-        
-        // Mostrar el resultado
-//        let alert = UIAlertController(
-//            title: "Código QR Escaneado",
-//            message: "Contenido: \(code)",
-//            preferredStyle: .alert
-//        )
-//        
-//        alert.addAction(UIAlertAction(title: "Escanear Otro", style: .default) { [weak self] _ in
-//            DispatchQueue.global(qos: .background).async {
-//                self?.captureSession.startRunning()
-//            }
-//        })
-//        
-//        alert.addAction(UIAlertAction(title: "Cerrar", style: .cancel) { [weak self] _ in
-//            self?.stopScanning()
-//        })
-//        
-//        present(alert, animated: true)
-        
-        // Aquí puedes agregar tu lógica personalizada para manejar el código escaneado
-        // Por ejemplo: presenter?.handleScannedQRCode(code)
+        presenter?.decodeQRCode(code)
     }
 }
 
@@ -296,7 +274,8 @@ extension HomeView: AVCaptureMetadataOutputObjectsDelegate {
 }
 
 extension HomeView: HomeViewProtocol {
-    func showProducts(_ products: [Product]) {
+    func showDecodedOrdenCompra(_ orden: OrdenCompra) {
+        print(orden)
     }
     
     func showError(_ message: String) {
@@ -312,7 +291,7 @@ extension HomeView: HomeViewProtocol {
     }
     
     func showQRCodeResult(_ response: QRCodeResponse) {
-        let alert = UIAlertController(title: "Resultado del QR", message: "Codigo: \(response.codigo)\nEstado: \(response.status)\nMensaje: \(response.message)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Resultado del QR", message: "ID Orden de Compra: \(response.idOrdenCompra)\nEstado: \(response.status)\nMensaje: \(response.message)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

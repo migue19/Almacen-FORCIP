@@ -17,25 +17,7 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
     }
 
     // MARK: - HomeRemoteDataManagerInputProtocol
-    func getProducts() {
-        networkService.request(
-            endpoint: "/api/products",
-            method: .GET,
-            body: nil,
-            responseType: ProductsResponse.self
-        ) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.remoteRequestHandler?.onProductsReceived(response.products)
-            case .failure(let error):
-                print(error)
-                let errorMessage = self?.getErrorMessage(from: error) ?? "Error desconocido"
-                self?.remoteRequestHandler?.onError(errorMessage)
-            }
-        }
-    }
-    
-    func postQRCode(_ request: QRCodeRequest) {
+    func postQRCode(_ request: OrdenCompra) {
         do {
             let jsonData = try JSONEncoder().encode(request)
             networkService.request(

@@ -18,32 +18,13 @@ class HomePresenter  {
 }
 
 extension HomePresenter: HomePresenterProtocol {
-    
-    func viewDidLoad() {
-        loadProducts()
-    }
-    
-    func loadProducts() {
+    func decodeQRCode(_ qrCode: String) {
         view?.showLoading()
-        interactor?.fetchProducts()
-    }
-    
-    func refreshProducts() {
-        loadProducts()
-    }
-    
-    func processQRCode(_ qrCode: String) {
-        view?.showLoading()
-        interactor?.sendQRCode(qrCode)
+        interactor?.decodeQRCode(qrCode)
     }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
-    
-    func didLoadProducts(_ products: [Product]) {
-        view?.hideLoading()
-        view?.showProducts(products)
-    }
     
     func didFailWithError(_ error: String) {
         view?.hideLoading()
@@ -56,6 +37,16 @@ extension HomePresenter: HomeInteractorOutputProtocol {
     }
     
     func didFailProcessingQRCode(_ error: String) {
+        view?.hideLoading()
+        view?.showError(error)
+    }
+
+    func didDecodeOrdenCompra(_ orden: OrdenCompra) {
+        view?.hideLoading()
+        interactor?.sendOrdenCompra(orden)
+    }
+
+    func didFailDecodingQRCode(_ error: String) {
         view?.hideLoading()
         view?.showError(error)
     }
